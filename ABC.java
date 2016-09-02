@@ -53,8 +53,8 @@ public class Main {
 
 
     public static boolean useUnderscore() {
-	// Should global names start with an '_'? Not with Linux/Unix.
-	return ! OS.matches(".*n.*x.*");
+		// Should global names start with an '_'? Not with Linux/Unix.
+		return ! OS.matches(".*n.*x.*");
     }
 
 
@@ -95,101 +95,101 @@ public class Main {
 
 
     private static void doTestScanner(Scanner s) {
-	while (s.nextToken.kind != eofToken)
-	    s.readNextToken();
-    }
+		while (s.nextToken.kind != eofToken)
+			s.readNextToken();
+		}
 
 
-    /* Del 2:
-    private static void doTestParser(Scanner s) {
-	Program prog = Program.parse(s);
-	if (s.curToken.kind != eofToken) 
-	    error("Scanner error: Garbage after the program!");
+		/* Del 2:
+		private static void doTestParser(Scanner s) {
+		Program prog = Program.parse(s);
+		if (s.curToken.kind != eofToken) 
+			error("Scanner error: Garbage after the program!");
 
-	prog.prettyPrint();
-    }
-    */
-
-
-    /* Del 3:
-    private static void doTestChecker(Scanner s) {
-	Program prog = Program.parse(s);
-	if (s.curToken.kind != eofToken) 
-	    error("Scanner error: Garbage after the program!");
-	if (log.doLogPrettyPrint)
-	    prog.prettyPrint();
-	
-	library = new Library();
-	prog.check(library, library);
-    }
-    */
+		prog.prettyPrint();
+		}
+		*/
 
 
-    /* Del 4:
-    private static void doRunRealCompiler(Scanner s) {
-	System.out.print("Parsing...");
-	Program prog = Program.parse(s);
-	if (s.curToken.kind != eofToken) 
-	    error("Scanner error: Garbage after the program!");
+		/* Del 3:
+		private static void doTestChecker(Scanner s) {
+		Program prog = Program.parse(s);
+		if (s.curToken.kind != eofToken) 
+			error("Scanner error: Garbage after the program!");
+		if (log.doLogPrettyPrint)
+			prog.prettyPrint();
+		
+		library = new Library();
+		prog.check(library, library);
+		}
+		*/
 
-	if (log.doLogPrettyPrint)
-	    prog.prettyPrint();
-	
-	System.out.print(" checking...");
-	library = new Library();
-	prog.check(library, library);
 
-	System.out.print(" generating code...");
-	CodeFile code = new CodeFile(baseFileName+".s");
-	library.genCode(code);  prog.genCode(code);
-	code.finish();
-	System.out.println("OK");
+		/* Del 4:
+		private static void doRunRealCompiler(Scanner s) {
+		System.out.print("Parsing...");
+		Program prog = Program.parse(s);
+		if (s.curToken.kind != eofToken) 
+			error("Scanner error: Garbage after the program!");
 
-	assembleCode();
-    }
-    */
+		if (log.doLogPrettyPrint)
+			prog.prettyPrint();
+		
+		System.out.print(" checking...");
+		library = new Library();
+		prog.check(library, library);
+
+		System.out.print(" generating code...");
+		CodeFile code = new CodeFile(baseFileName+".s");
+		library.genCode(code);  prog.genCode(code);
+		code.finish();
+		System.out.println("OK");
+
+		assembleCode();
+		}
+		*/
 
 
     private static void assembleCode() {
-	String pName = baseFileName;
-	String sName = baseFileName + ".s";
+		String pName = baseFileName;
+		String sName = baseFileName + ".s";
 
-	String cmd[] = new String[8];
-	cmd[0] = "gcc";  cmd[1] = "-m32";
-	cmd[2] = "-o";   cmd[3] = pName;
-	cmd[4] = sName;  
-	cmd[5] = "-L.";  cmd[6] = "-L/hom/inf2100";  cmd[7] = "-lpas2016";  
+		String cmd[] = new String[8];
+		cmd[0] = "gcc";  cmd[1] = "-m32";
+		cmd[2] = "-o";   cmd[3] = pName;
+		cmd[4] = sName;  
+		cmd[5] = "-L.";  cmd[6] = "-L/hom/inf2100";  cmd[7] = "-lpas2016";  
 
-	System.out.print("Running");
-	for (String s: cmd) {
-	    if (s.contains(" "))
-		System.out.print(" '" + s + "'");
-	    else
-		System.out.print(" " + s);
-	}
-	System.out.println();
+		System.out.print("Running");
+		for (String s: cmd) {
+			if (s.contains(" "))
+			System.out.print(" '" + s + "'");
+			else
+			System.out.print(" " + s);
+		}
+		System.out.println();
 
-	try {
-	    String line;
-	    Process p = Runtime.getRuntime().exec(cmd);
+		try {
+			String line;
+			Process p = Runtime.getRuntime().exec(cmd);
 
-	    // Print any output from the assembly process:
-	    BufferedReader out = new BufferedReader
-		(new InputStreamReader(p.getInputStream()));
-	    BufferedReader err = new BufferedReader
-		(new InputStreamReader(p.getErrorStream()));
+			// Print any output from the assembly process:
+			BufferedReader out = new BufferedReader
+			(new InputStreamReader(p.getInputStream()));
+			BufferedReader err = new BufferedReader
+			(new InputStreamReader(p.getErrorStream()));
 
-	    while ((line = out.readLine()) != null) {
-		System.out.println(line);
-	    }
-	    while ((line = err.readLine()) != null) {
-		System.out.println(line);
-	    }
-	    out.close();  err.close();
-	    p.waitFor();
-	} catch (Exception err) {
-	    error("Assembly errors detected.");
-	}
+			while ((line = out.readLine()) != null) {
+			System.out.println(line);
+			}
+			while ((line = err.readLine()) != null) {
+			System.out.println(line);
+			}
+			out.close();  err.close();
+			p.waitFor();
+		} catch (Exception err) {
+			error("Assembly errors detected.");
+		}
     }
 
 

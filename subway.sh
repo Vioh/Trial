@@ -44,7 +44,7 @@ esac
 data=$(curl -s $link | grep -m 1 "Retning")
 case "$flag" in 
 	"--E") data=${data%Retning*};; #-- Get data for East
-	"--W") data=${data%*Retning};; #-- Get data for West
+	"--W") data=${data##*Retning};; #-- Get data for West
 esac
 
 # Step 3: Main loop to print out all the info. 

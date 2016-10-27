@@ -1,11 +1,5 @@
 >> A = double(imread('mm.gif', 'gif'));
->> size(A)
-ans =
-   256   256
->> rank(A)
-ans =
-   256
->> rank(A,0.001)
-ans =
-   256
->> 
+>> mm8 = uint8(svdApprox(A,8));
+>> mm32 = uint8(svdApprox(A,32));
+>> imwrite(mm8, 'mm8.gif', 'gif');
+>> imwrite(mm32, 'mm32.gif', 'gif');

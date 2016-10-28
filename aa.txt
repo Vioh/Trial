@@ -1,8 +1,5 @@
 >> A = double(imread('mm.gif', 'gif'));
->> B = round(255*rand(256,256));
->> rank(A, 0.1)
-ans =
-   254
->> rank(B, 0.1)
-ans =
-   256
+>> AK = svdApprox(A,80);
+>> error = relError(A, AK)
+error =
+    0.0134

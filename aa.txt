@@ -1,5 +1,0 @@
->> A = double(imread('mm.gif', 'gif'));
->> AK = svdApprox(A,80);
->> error = relError(A, AK)
-error =
-    0.0134

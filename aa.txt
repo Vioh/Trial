@@ -1,10 +1,11 @@
-A = double(imread('mm.gif', 'gif'));
-[U,S,V] = svd(A);
+B = round(255*rand(256,256));
+[U,S,V] = svd(B);
 s = diag(S); % vector of all singular values
+imwrite(uint8(B), 'pic.gif', 'gif');
 
 figure;
 plot(s, 'r', 'LineWidth', 1.5);		% plot the line
 set(gca, 'XTick', 0:32:length(s));	% put the ticks at every 32nd place
 axis([0,256,0,inf]);				% set the x-axis limit
 title('Plot of Singular Values');
-print('plot', '-dpng');
+print('plot2', '-dpng');

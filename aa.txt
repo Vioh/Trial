@@ -1,5 +1,10 @@
->> A = double(imread('mm.gif', 'gif'));
->> mm8 = uint8(svdApprox(A,8));
->> mm32 = uint8(svdApprox(A,32));
->> imwrite(mm8, 'mm8.gif', 'gif');
->> imwrite(mm32, 'mm32.gif', 'gif');
+A = double(imread('mm.gif', 'gif'));
+[U,S,V] = svd(A);
+s = diag(S); % vector of all singular values
+
+figure;
+plot(s, 'r', 'LineWidth', 1.5);		% plot the line
+set(gca, 'XTick', 0:32:length(s));	% put the ticks at every 32nd place
+axis([0,256,0,inf]);				% set the x-axis limit
+title('Plot of Singular Values');
+print('plot', '-dpng');

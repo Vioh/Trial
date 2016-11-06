@@ -27,7 +27,32 @@ python3 hl.py syntax/syntax theme/syntax syntax/python   # test on syntax file
 Testing ```diff``` utility
 --------------------------
 
-```bash
+```shell
 python3 diff.py test/d1.txt test/d2.txt       # run diff on d1.txt and d2.txt
 python3 hl.py syntax/diff theme/diff diff.log # view the diff output
 ```
+
+My implementation of the standard ```diff``` utility is based heavily on the
+LCS (longest common subsequence) algorithm. I have created 5 different test
+cases, which are all contained inside the ```d1.txt``` and ```d2.txt``` files.
+Down here are the desired/expected outputs which I have myself computed by
+hands. These should later be compared to the actual output from the ```diff``` 
+utility to see it everything works correctly.
+
+Output | Original | Modified |
+-------+----------+-----------
+- A1   |        |        |
+0 B1   |        |        |
++ A1   |        |        |
+0 C1   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |
+   |        |        |

@@ -17,7 +17,7 @@ neccessary for testing. We will be using the highlighter on the test files that
 are inside the `test` directory. Assuming that you are using bash, run the
 following commands for testing:
 
-```sh
+```python
 python3 hl.py syntax/python theme/python test/test.py    # use on black/purple bg
 python3 hl.py syntax/python theme/python2 test/test.py   # use on white bg
 python3 hl.py syntax/assembly theme/assembly test/test.s # test assembly

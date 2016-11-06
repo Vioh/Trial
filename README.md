@@ -4,8 +4,8 @@ INF3331 - Assignment 5 (syhd)
 Testing the highlighter
 -----------------------
 
-I have written the the syntax/theme files for 2 programming languages (python
-and assembly) as well as for the output of the diff utility. To improve the
+I have written the syntax/theme files for 2 programming languages (python and
+assembly) as well as for the output of the diff utility. To improve the
 readability, I have designed the highlighter in such a way that it is possible
 to add comments here and there within the syntax or the theme files. These
 comments are always started with a hashtag (#) just like in bash or in python.

@@ -39,12 +39,12 @@ Down here are the desired/expected outputs which I have myself computed by
 hands. These should later be compared to the actual output from the ```diff``` 
 utility to see it everything works correctly.
 
-Output | Original | Modified |
--------+----------+-----------
-- A1   |        |        |
-0 B1   |        |        |
-+ A1   |        |        |
-0 C1   |        |        |
+|Output | Original | Modified |
+|-------+---------------------
+|- A1   |        |        |
+|0 B1   |        |        |
+|+ A1   |        |        |
+|0 C1   |        |        |
    |        |        |
    |        |        |
    |        |        |

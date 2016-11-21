@@ -1,34 +1,3 @@
-/* Exercise 9-------------------------------------------
-1. Give rules for the relation gc(X,Y) which expresses that X is a
-   grandchild of Y.  
-2. What will the result be of executing the queries: 
-   gc(beate, aale).
-   gc(beate, X).
-3. Give rules for the relation cd(X,Y) which expresses that X and Y
-   have common descendants. (i.e. children, grandchildren, great grand
-   children etc.)
-4. Give rules for the relation oc(X) which expresses that X is an only
-   child (enebarn).
-*/
-
-p(anne, aase, aale, 1960).
-p(arne, aase, aale, 1962).
-p(beate, anne, lars, 1989).
-p(bjorn, lise, arne, 1990).
-child(X,Y) :- p(X,_,Y,_).
-child(X,Y) :- p(X,Y,_,_).
-gc(X,Y) :- child(X,Z), child(Z,Y).
-descendant(X,Y) :- child(X,Y).
-descendant(X,Y) :- child(X,Z), child(Z,Y).
-cd(X,Y) :- descendant(X,D1), descendant(Y,D2), X \== Y, D1 == D2.
-
-%% gc(beate, aale) --> true
-%% gc(beate, X) --> X = aase, X = aale
-%% cd(beate, bjorn) --> true
-%% cd(beate, ginny) --> false
-%% cd(beate, anne) --> true
-%% cd(beate, aale) --> false
-
 /* Exercise 10-------------------------------------------
 Write a Prolog rule 
 	addAtEnd(List1, Object, List2)

@@ -1,7 +1,5 @@
-/* Exercise 1
-
+/* Exercise 1----------------------------------------------
 Represent the following statements in Prolog:
-
 1. Ivar studies Informatics 
 2. The population of Norway is 4,5 million 
 3. Norway is a rich country 
@@ -10,22 +8,23 @@ Represent the following statements in Prolog:
 6. All humans are mortal 
 7. All rich people pay taxes 
 8. Ivar takes his umbrella if it rains 
-9. Firebrigade employees are men over six feet tall.
+9. Google employees are graduates who are smart.
 */
 
-studies(ivar, informatics).
+student(ivar, informatics).
 population(norway, 4500000).
 rich(norway).
-tax_payer(X) :- rich(X).
 prime(2).
 author(hamlet, someone).
 mortal(X) :- human(X).
+tax_payer(X) :- rich(X).
 takes_umbrella(ivar) :- rains.
-man(X) :- firebrigade(X).
-tallerThan6Feet(X) :-firebrigade(X).
+graduates(X) :- googleEmployee(X).
+tallerThan6Feet(X) :- googleEmployee(X).
 
-/* Exercise 2 
-Given the following facts: */
+/* Exercise 2---------------------------------------------
+Given the below facts. Make a question where the answer is
+the author and title of biographies published in 2003.
 biography(bashir,saddams_fortrolige,2004). 
 biography(moen,jensStoltenberg,2002). 
 biography(halvorsen,rett_fra_hjertet,2004). 
@@ -33,35 +32,37 @@ biography(isaksen, dronningen_vi_ikke_fikk,2003).
 biography(hasted,eminem,2003). 
 biography(ness,munch,2004). 
 biography(willoch,utfordringer,2004).
-
-/* Make a question where the answer is the author and title of biographies published in 2003. */
-
-
-/* Exercise 3 
-
-Define a relation "likes", so that ola likes both Italian and mild Indian food.
- 
-These are Italian dishes: pizza, spaghetti. 
-
-These are Indian dishes: tandoori, curry, tikkaMasala. Of these, curry and tikkaMasala are hot, while tandoori is mild. 
 */
-italian(pizza) .
-italian(spaghetti).
 
+biography(Author, Title, 2003)
+
+/* Exercise 3---------------------------------------------
+Define a relation "likes", so that ola likes both Italian and mild Indian food.
+Italian dishes: pizza, spaghetti.
+Indian dishes: tandoori(mild), curry(hot), tikkaMasala(hot).
+*/
+
+italian(pizza).
+italian(spaghetti).
 indian(tandoori).
 indian(curry).
 indian(tikkaMasala).
-
-hot(curry).
 hot(tikkaMasala).
-mild(tandoori).
+mild(tandoori). 
+likes(ola, Dish) :- italian(Dish).
+likes(ola, Dish) :- indian(Dish), mild(Dish).
 
-%likes(ola, X) :- mild(X), indian(X).
-%likes(ola, X) :- italian(X).
-
-/* Exercise 4 
-Extend the above with nationality, so that Norwegians (as ola) like Italian food and mild Indian food, while Indians like both mild and hot Indian dishes, but not Italian food. 
+/* Exercise 4---------------------------------------------
+Extend the above with nationality so that:
+- Norwegians (as ola) like Italian food and mild Indian food
+- Indians like both mild and hot Indian dishes, but not Italian food.
 */
+
+nationality(ola, norway).
+nationality(eyvind, norway).
+nationality(raji, india).
+nationality(rajesh, india).
+
 
 nationality(ola, nor).
 nationality(eyvind, nor).

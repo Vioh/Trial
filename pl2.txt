@@ -1,0 +1,102 @@
+/* Exercise 9-------------------------------------------
+1. Give rules for the relation gc(X,Y) which expresses that X is a
+   grandchild of Y.  
+2. What will the result be of executing the queries: 
+   gc(beate, aale).
+   gc(beate, X).
+3. Give rules for the relation cd(X,Y) which expresses that X and Y
+   have common descendants. (i.e. children, grandchildren, great grand
+   children etc.)
+4. Give rules for the relation oc(X) which expresses that X is an only
+   child (enebarn).
+*/
+
+p(anne, aase, aale, 1960).
+p(arne, aase, aale, 1962).
+p(beate, anne, lars, 1989).
+p(bjorn, lise, arne, 1990).
+child(X,Y) :- p(X,_,Y,_).
+child(X,Y) :- p(X,Y,_,_).
+gc(X,Y) :- child(X,Z), child(Z,Y).
+
+%% gc(beate, aale) --> true
+%% gc(beate, X) --> X = aase, X = aale
+
+
+
+
+Exercise 2
+-----------
+
+a) IN211 exam 1992, problem 2e:
+
+1. How would you express the following facts in Prolog: "eva is anne's
+boss", "eva is atle's boss" and "lars is eva's boss".
+ 
+2. We introduce the relation sup, such that sup(X,Y) means that X is
+superior to Y, i.e. X is the boss of Y or the boss of the boss of
+Y. Give prolog rules which defines the sup relation. 
+
+3. A collection of "boss"-facts is said to be OK if no person is
+superior to himself and if no person have more than one boss. Show how
+you can test that your facts are OK. 
+ 
+
+b) IN211 exam 1997, problem 3:
+
+We consider some form for data storage divided in two, a local storage
+and a remote storage. (As. e.g. with memory and disk in a computer). 
+
+The content of the local store and the remote store is expressed by
+the relation ls and rs, respectively. E.g. by the following facts: 
+
+ls(1, ole).
+ls(2, dole).
+ls(3, ole).
+
+rs(1, ole).
+rs(2, dole).
+rs(3, doffen).
+rs(5, dolly).
+
+The first argument of ls and rs are called indexes, the second
+argument is called values.
+
+- Look up
+ 
+Write rules which describe a relation "find" such that find(I,X) is
+true if either ls(I,X) or rs(I,X) is true. If there are several
+solutions, ls solutions should come before rs solutions. 
+
+- Error
+
+Write rules which describe a relation "error" such that error(I) is
+true if there for some index I are different values in rs and ls. 
+Index 3 is for example wrong in the facts given above.
+
+- Multiple 
+
+Write rules to describe a relation "multi" such that multi(X) is true
+if X occurs more than once in ls, or in rs, or if X occurs in both rs and ls, but
+with different indexes. 
+
+How many solutions will multi(X) give (including repeated solutions),
+for the facts given above? 
+
+c) INF3110/4110 exam 2003 problem 6.
+   (http://www.uio.no/studier/emner/matnat/ifi/INF3110/h06/gamle_eksamen/INF3110-4110-2003-eks-eng.pdf)
+
+
+Exercise 3
+-----------
+
+Write a Prolog rule 
+	addAtEnd(List1, Object, List2)
+which is true if List2 is List1 extended with Object at the end. 
+
+
+Exercise 4
+----------
+
+Write a Prolog rule to reverse a list.
+

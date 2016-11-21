@@ -1,55 +1,50 @@
 /* Exercise 10-------------------------------------------
 Write a Prolog rule 
-	addAtEnd(List1, Object, List2)
-which is true if List2 is List1 extended with Object at the end. 
+	addToEnd(List1, Obj, List2)
+which appends Obj to List1 and assigns the new list to List2
 */
+
+addToEnd([], Obj, [Obj]).
+addToEnd([X | L1], Obj, [X | L2) :-	addToEnd[L1, Obj, L2].
 
 /* Exercise 11-------------------------------------------
 Write a Prolog rule to reverse a list.
 */
 
+reverse([], []).
+reverse([X], [X]).
+reverse([X|Xs], Ys) :- reverse(Xs,Zs), addToEnd(Zs,X,Ys).
 
 
 
 
 
 
+Exercise 2
+-----------
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Exercise 10-------------------------------------------
 a) IN211 exam 1992, problem 2e:
-	1. How would you express the following facts in Prolog: "eva is anne's
-	boss", "eva is atle's boss" and "lars is eva's boss".
-	2. We introduce the relation sup, such that sup(X,Y) means that X is
-	superior to Y, i.e. X is the boss of Y or the boss of the boss of Y.
-	Give prolog rules which defines the sup relation. 
-	3. A collection of "boss"-facts is said to be OK if no person is
-	superior to himself and if no person have more than one boss. Show how
-	you can test that your facts are OK. 
+
+1. How would you express the following facts in Prolog: "eva is anne's
+boss", "eva is atle's boss" and "lars is eva's boss".
+ 
+2. We introduce the relation sup, such that sup(X,Y) means that X is
+superior to Y, i.e. X is the boss of Y or the boss of the boss of
+Y. Give prolog rules which defines the sup relation. 
+
+3. A collection of "boss"-facts is said to be OK if no person is
+superior to himself and if no person have more than one boss. Show how
+you can test that your facts are OK. 
+ 
+
 b) IN211 exam 1997, problem 3:
-	We consider some form for data storage divided in two, a local storage
-	and a remote storage. (As. e.g. with memory and disk in a computer). 
-	The content of the local store and the remote store is expressed by
-	the relation ls and rs, respectively. E.g. by the following facts: 
+
+We consider some form for data storage divided in two, a local storage
+and a remote storage. (As. e.g. with memory and disk in a computer). 
+
+The content of the local store and the remote store is expressed by
+the relation ls and rs, respectively. E.g. by the following facts: 
+
 ls(1, ole).
 ls(2, dole).
 ls(3, ole).
@@ -85,6 +80,28 @@ for the facts given above?
 
 c) INF3110/4110 exam 2003 problem 6.
    (http://www.uio.no/studier/emner/matnat/ifi/INF3110/h06/gamle_eksamen/INF3110-4110-2003-eks-eng.pdf)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 bossOf(eva, anne).

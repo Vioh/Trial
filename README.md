@@ -10,8 +10,8 @@ decide which parse tree is the correct one.
 (state machine), or a syntax diagram (jernbanediagram).
 
 Two ways to identify a type:
-1. By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
-2. By its structure (e.g. fields, operations, etc.) => structural type checking.
+(1) By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
+(2) By its structure (e.g. fields, operations, etc.) => structural type checking.
 
 
 

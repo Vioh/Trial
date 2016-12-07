@@ -1,10 +1,13 @@
 Systax & Semantics
 ------------------
 
-- If every sentence in a PL can be derived by one and only one parser tree,
-then the grammar is unambiguous. Other wise it is ambiguous.
-- One can describe a PL syntax using eBNF grammar, automata (state machine), or
-a syntax diagram (jernbanediagram).
+- If every sentence in a PL can be derived by one and only one
+parse tree, then the grammar is **unambiguous**. In the case
+that the grammar is ambiguous, we use common precedence to
+decide which parse tree is the correct one.
+- One can describe a PL syntax using eBNF grammar, an automata 
+(state machine), or a syntax diagram (jernbanediagram).
+
 
 
 Two ways to identify a type:</br>

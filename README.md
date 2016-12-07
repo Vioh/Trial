@@ -1,14 +1,17 @@
-General
-=======
+Systax & Semantics
+------------------
 
-Two ways to identify a type:<br/>
-1. By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
-2. By its structure (e.g. fields, operations, etc.) => structural type checking.
+- If every sentence in a PL can be derived by one and only one parser tree,
+then the grammar is unambiguous. Other wise it is ambiguous.
+
+- One can describe a PL syntax using eBNF grammar, automata (state machine), or
+a syntax diagram (jernbanediagram).
 
 
+Two ways to identify a type:</br>
+- By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
+- By its structure (e.g. fields, operations, etc.) => structural type checking.
 
-1. dsf 
-2. df 
 
 
 

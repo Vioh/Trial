@@ -9,12 +9,47 @@ decide which parse tree is the correct one.
 - One can describe a PL syntax using eBNF grammar, an automata 
 (state machine), or a syntax diagram (jernbanediagram).
 
-Two ways to identify a type:
-- By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
-- By its structure (e.g. fields, operations, etc.) => structural type checking.
+A type is identified by:
+- Its name (e.g. Person, int, float). This is *nominal* type
+checking => 2 types are the same if their names are the same.
+- Its structure/signatures. This is *structural* type checking =>
+2 types are the same if they are nominally compatible or if 
+their signatures (e.g. functions, variables, names) are the same.
+
+OOP
+---
+
+Four properties of OOP:
+
+1. Dynamic lookup: When a message is sent to an object, the
+object chooses how to respond to a message based on the way
+the object is implemented (not based on some static property
+of the pointer or variable used to name the boject).
+2. Abstraction: Implementation details are hidden inside a
+program unit with a specific interface. The interface consists
+of hidden data as well as public methods that manipulate these data.
+
+3. Subtyping: If object A has all functionality of object B,
+we may use A in any context that expects B.
+
+4. Inheritence: Ability to reuse the definite of one kind of
+object to define another kind of object.
+
+
+
+
+
+
+SML
+---
+
+
+
+
 
 ```sml
 (* Miscellaneous *)
+not true andalso true orelse true;
 val cell = ref 50;
 cell := !cell * 2;
 fn x => x*2; (* annonymous with no names*)

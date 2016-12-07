@@ -9,7 +9,7 @@ decide which parse tree is the correct one.
 - One can describe a PL syntax using eBNF grammar, an automata 
 (state machine), or a syntax diagram (jernbanediagram).
 
-Two ways to identify a type:<br/>
+Two ways to identify a type:
 1. By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
 2. By its structure (e.g. fields, operations, etc.) => structural type checking.
 

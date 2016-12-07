@@ -13,8 +13,16 @@ Two ways to identify a type:
 - By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
 - By its structure (e.g. fields, operations, etc.) => structural type checking.
 
-
-
+```sml
+(* Miscellaneous *)
+val cell = ref 50;
+cell := !cell * 2;
+fn x => x*2; (* annonymous with no names*)
+fun double x = it x;
+val name : string = "John";
+val (x,y) = (0,1);
+fun convert x = case x of 0 => SOME(false) | 1 => SOME(true) | _ => NONE;
+```
 
 
 

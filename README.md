@@ -20,7 +20,7 @@ A type checker is:
 - **Sound** if no programs with errors are considered to be correct. '
 - **Conservative** if some programs (which produce *no* error
 when running) are still cosnidered to be incorrect.
-=> Most type checkers are both sound and conservative.
+- Most type checkers are both sound and conservative.
 
 OOP
 ---
@@ -43,40 +43,19 @@ we may use A in any context that expects B.
 object to define another kind of object.
 
 
-
-
-(* Defining an abstract datatype for complex numbers: *)
-abstype cmplx = C of real * real with
-	fun cmplx(x,y: real) = C(x,y)
-	fun x coord(C(x,y)) = x
-	fun y coord(C(x,y)) = y
-	fun add(C(x1, y1), C(x2, y2)) = C(x1+x2, y1+y2)
-end
-
-(* General structure to declare an abstract type in SML:
-abstype <name> = <constructor> of <type> with
-	val <pattern> = <body>
-	...
-	fun f(<pattern>) = <body>
-	...
-end *)
-
-
-
-
-
-
-
-
 SML
 ---
 
+General SML programming:
+- SML is **strongly** typed => members of a list must have the same type.
+- Division: `div` to divide integers, and `/` to divide reals.
+- Type `unit()` is used for side effects (like for print function).
+- Conversion from `int` to `real` is done by `real(x)`.
+- Conversion from `real` to `int` is done by `floor`, `ceil`, `trunc`, or `round`
+- Exceptions should be *dynamically* scoped (in order to trace the call-stack)
 
-
-
-
+Miscellaneous SML syntax:
 ```sml
-(* Miscellaneous *)
 fun equiv(x,y) = (x andalso y) orelse ((not x) andalso (not y));
 val cell = ref 50;
 cell := !cell * 2;
@@ -87,19 +66,46 @@ val (x,y) = (0,1);
 fun convert x = case x of 0 => SOME(false) | 1 => SOME(true) | _ => NONE;
 ```
 
+Recursions in SML:
+```sml
+fun fac1 n = (* vanlig rekursjon *)
+    if n = 0 then 1 else n*fac1(n-1);
+fun fac2 n = (* halerekursjon *)
+  let fun iter (n, res) = if n = 0 then res else iter(n-1, n*res)
+  in iter (n, 1) end;  
+fun len (nil) = 0
+|   len (x::xs) = 1 + len xs;
+fun rev1 ([]) = [] (* vanlig rekursjon *)
+|   rev1 (x::xs) = reverse(xs)@[x];
+fun rev2 (lst) =   (* halerkursjon *)
+  let fun iter([], ys) = ys
+      |   iter(x::xs, ys) = iter(xs, x::ys)
+  in iter(lst, []) end;
+fun append ([], ys) = ys
+|   append (x::xs, ys) = x::append(xs, ys);
+fun insert (e, []) = [x]
+|   insert (e, x::xs) = if e<x then e::x::xs else x::insert(e,xs);
+```
+
+Higher-order functions in SML:
+```sml
+fun square lst = map (fn x => x*x) lst; (* inbuilt map *)
+fun map1 f [] = []
+|   map1 f (x::xs) = (f x)::(map1 f xs)
+fun filter p [] = []
+|   filter p (x::xs) = if (p x) then x::(filter p xs) else filter p xs;
+```
 
 
 
-================== Type Checking:
-- ML is STRONGLY-typed
-- Members of a LIST must be of the SAME type.
-- Division: ´div´ to divide integers, and ´/´ to divide reals.
-- Type unit:() is like ´void´ in Java => indicate an "empty" type (ie. use for side 
-effects such as the ´print´ function)
-- Conversion from int to real is done by the function ´real(x)´
-- Conversion from real to int is be done by functions ´floor´ (round down to a LOWER
-num), ´ceil´ (round up to a HIGHER num), ´round´ (normal rounding), ´trunc´ (take
-away the decimal part).
+
+
+
+
+
+
+
+
 
 
 

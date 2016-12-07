@@ -1,9 +1,9 @@
 General
 =======
 
-Two ways to identify a type:
-
-
+Two ways to identify a type:<br/>
+1. By its name (e.g. Person, Stack, int, float, etc.) => nominal type checking.
+2. By its structure (e.g. fields, operations, etc.) => structural type checking.
 
 
 

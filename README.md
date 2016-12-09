@@ -42,6 +42,10 @@ we may use A in any context that expects B.
 4. Inheritence: Ability to reuse the definite of one kind of
 object to define another kind of object.
 
+There are 2 kinds of overloading of functions/operators:
+- Context-independent: overloading is done **only** on the types of the parameters.
+- context-dependent: overloading is done on **both** the types of the parameters,
+as well as the return type. 
 
 SML
 ---

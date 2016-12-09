@@ -48,7 +48,7 @@ SML
 
 General SML programming:
 - SML is **strongly** typed => members of a list must have the same type.
-- Division: `div` to divide integers, and `/` to divide reals.
+- Division: `div` to divide integers, and `/` to divide reals, and `mod` for modulo of int.
 - Type `unit()` is used for side effects (like for print function).
 - Conversion from `int` to `real` is done by `real(x)`.
 - Conversion from `real` to `int` is done by `floor`, `ceil`, `trunc`, or `round`
@@ -96,65 +96,64 @@ fun filter p [] = []
 |   filter p (x::xs) = if (p x) then x::(filter p xs) else filter p xs;
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 PROLOG NOTES
-============
+------------
 
 Principles when programming with PROLOG:
-----------------------------------------
-(1) FACTS (predicates) are clauses representing basic truths in the world.
-(2) RULES are clauses representing rules associated with the facts.
-(3) QUERIES are questions to be answered by PROLOG (with the help of clauses).
---> PROLOG works in a closed world (a query is true if it's in the database).
---> There are NO functions in PROLOG, just relations.
-	E.g. relation(a,b) may be understood as f(a)=b
---> For recursive case, non-recursive rules first, recursive rules at the end.
---> Arithmetic operations are functional not relational, destroying PROLOG's
-	declarative style of programming. This is solved by constraint logic prog.
---> The rule "A :- B" means "if B then A".
---> The unification/assignment to a variable should happen on the LHS of a rule.
+- FACTS (predicates) are clauses representing basic truths in the world.
+- RULES are clauses representing rules associated with the facts.
+- QUERIES are questions to be answered by PROLOG (with the help of clauses).
+- Conjunctions (logical 'and') should grow on the same branch of the search tree.
+- Logical 'or' should be on different branches of the search tree.
+- For recursive case, non-recursive rules first, recursive rules at the end.
+- The rule "A :- B" means "if B then A".
+- The unification/assignment to a variable should happen on the LHS of a rule.
 
 PROLOG syntax:
---------------
-$$$ Symbol _ can be used to begin an unused variable (e.g: _A, _B, _, _C).
-$$$ Symbol \== means not equal.
-$$$ Comma represents the logical 'and'.
-$$$ Semicolon represents the logical 'or'.
-$$$ Variable is a word starting with upper-case letters or with symbol '_'.
-$$$ Constants (e.g. "sofia", 1, 1.2) must start with lower-case letters.
-$$$ Relations (e.g. isEqualTo, person) must start with lower-case letters.
-$$$ Lists are constructed with cons [head | tail]. Equivalent syntax for lists:
-	[1,2,3,4,5]
-	[1|[2|[3|[4|[5|[]]]]]]
-	[1,2|X] --> x = [3,4,5]
-	Note that [1,2,X] will NOT unify and will return NO.
+- Symbol _ can be used to begin an unused variable (e.g: _A, _B, _, _C).
+- Symbol \== means not equal.
+- Variable is a word starting with upper-case letters or with symbol '_'.
+- Constants (e.g. "sofia", 1, 1.2) must start with lower-case letters.
+- Relations (e.g. isEqualTo, person) must start with lower-case letters.
+- Lists are constructed with cons [head | tail]. Equivalent syntax for lists:
+```prolog
+[1,2,3,4,5]
+[1|[2|[3|[4|[5|[]]]]]]
+[1,2|X] %% result is X = [3,4,5]
+%% Note that [1,2,X] will NOT unify and will return NO.
+```	
 
-PROLOG search tree:
--------------------
-$$$ Conjunctions (logical 'and') should grow on the same branch.
-$$$ Logical 'or' should be on different branches.
+From Ukesoppgaver:
+```prolog
+%% cd is common descendent
+p(anne, aase, aale, 1960).
+p(arne, aase, aale, 1962).
+p(beate, anne, lars, 1989).
+p(bjorn, lise, arne, 1990).
+child(X,Y) :- p(X,_,Y,_).
+child(X,Y) :- p(X,Y,_,_).
+gc(X,Y) :- child(X,Z), child(Z,Y).
+descendant(X,Y) :- child(X,Y).
+descendant(X,Y) :- child(X,Z), child(Z,Y).
+cd(X,Y) :- descendant(X,D1), descendant(Y,D2), X \== Y, D1 == D2.
 
-Miscellaneous:
---------------
-$$$ Run GNU-Prolog compiler with: gprolog
-$$$ [file]. --> import file.pl into the interactive compiler
+%% addToEnd(List1, Obj, List2) --> appends Obj to List1 and assign the new list to List2
+addToEnd([], Obj, [Obj]).
+addToEnd([X | L1], Obj, [X | L2) :-	addToEnd[L1, Obj, L2].
+
+%% reverse a list
+reverse([], []).
+reverse([X], [X]).
+reverse([X|Xs], Ys) :- reverse(Xs,Zs), addToEnd(Zs,X,Ys).
+
+%% recursion
+connection(X,Y) :- directLine(X,Y).
+connection(X,Y) :- directLine(X,Z), connection(Z,Y).
+
 %% boss(X,Y) --> X is a boss of Y
 %% sup(X,Y) --> X is superior to Y
 sup(X,Y) :- boss(X,Y).
 sup(X,Y) :- boss(X,Z), sup(Z,Y).
 multBoss(X) :- boss(B1,X), boss(B2,X), B1 \== B2.
 ok(X) :- \+sup(X,X), \+multBoss(X).
+```

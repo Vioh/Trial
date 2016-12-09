@@ -43,9 +43,8 @@ we may use A in any context that expects B.
 object to define another kind of object.
 
 There are 2 kinds of overloading of functions/operators:
-- Context-independent: overloading is done **only** on the types of the parameters.
-- context-dependent: overloading is done on **both** the types of the parameters,
-as well as the return type. 
+- Context-independent: overloading is done **only** on the param types.
+- Context-dependent: overloading is done on **both** param types and return type.
 
 SML
 ---
@@ -100,8 +99,8 @@ fun filter p [] = []
 |   filter p (x::xs) = if (p x) then x::(filter p xs) else filter p xs;
 ```
 
-PROLOG NOTES
-------------
+PROLOG
+------
 
 Principles when programming with PROLOG:
 - FACTS (predicates) are clauses representing basic truths in the world.
@@ -114,12 +113,12 @@ Principles when programming with PROLOG:
 - The unification/assignment to a variable should happen on the LHS of a rule.
 
 PROLOG syntax:
-- Symbol _ can be used to begin an unused variable (e.g: _A, _B, _, _C).
-- Symbol \== means not equal.
-- Variable is a word starting with upper-case letters or with symbol '_'.
-- Constants (e.g. "sofia", 1, 1.2) must start with lower-case letters.
+- Symbol `_` can be used to begin an unused variable (e.g: _A, _B, _, _C).
+- Symbol `\==` means not equal.
+- Variable is a word starting with uppercase letters or with symbol `_`.
+- Constants (e.g. "sofia", 1, 1.2) must start with lowercase letters.
 - Relations (e.g. isEqualTo, person) must start with lower-case letters.
-- Lists are constructed with cons [head | tail]. Equivalent syntax for lists:
+- Lists are constructed with `cons [head | tail]`. Equivalent syntax for lists:
 ```prolog
 [1,2,3,4,5]
 [1|[2|[3|[4|[5|[]]]]]]
@@ -141,9 +140,9 @@ descendant(X,Y) :- child(X,Y).
 descendant(X,Y) :- child(X,Z), child(Z,Y).
 cd(X,Y) :- descendant(X,D1), descendant(Y,D2), X \== Y, D1 == D2.
 
-%% addToEnd(List1, Obj, List2) --> appends Obj to List1 and assign the new list to List2
+%% addToEnd(List1, Obj, List2) appends Obj to List1 and assign new list to List2
 addToEnd([], Obj, [Obj]).
-addToEnd([X | L1], Obj, [X | L2) :-	addToEnd[L1, Obj, L2].
+addToEnd([X | L1], Obj, [X | L2) :- addToEnd[L1, Obj, L2].
 
 %% reverse a list
 reverse([], []).

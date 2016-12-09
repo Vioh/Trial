@@ -140,6 +140,10 @@ descendant(X,Y) :- child(X,Y).
 descendant(X,Y) :- child(X,Z), child(Z,Y).
 cd(X,Y) :- descendant(X,D1), descendant(Y,D2), X \== Y, D1 == D2.
 
+%% recursion
+connection(X,Y) :- directLine(X,Y).
+connection(X,Y) :- directLine(X,Z), connection(Z,Y).
+
 %% addToEnd(List1, Obj, List2) appends Obj to List1 and assign new list to List2
 addToEnd([], Obj, [Obj]).
 addToEnd([X | L1], Obj, [X | L2) :- addToEnd[L1, Obj, L2].
@@ -149,14 +153,42 @@ reverse([], []).
 reverse([X], [X]).
 reverse([X|Xs], Ys) :- reverse(Xs,Zs), addToEnd(Zs,X,Ys).
 
-%% recursion
-connection(X,Y) :- directLine(X,Y).
-connection(X,Y) :- directLine(X,Z), connection(Z,Y).
-
 %% boss(X,Y) --> X is a boss of Y
 %% sup(X,Y) --> X is superior to Y
 sup(X,Y) :- boss(X,Y).
 sup(X,Y) :- boss(X,Z), sup(Z,Y).
 multBoss(X) :- boss(B1,X), boss(B2,X), B1 \== B2.
 ok(X) :- \+sup(X,X), \+multBoss(X).
+```
+
+
+Additional stuff for SML
+```sml
+type frac = {numer : int, denom : int};
+fun add(a : frac, b : frac) = 
+	{numer = (#numer(a) * #denom(b) + #numer(b) * #denom(a)),
+	 denom = (#denom(a) * #denom(b))};
+add({numer=1,denom=2}, {numer=3,denom=4});
+
+(* 
+Exercise 7
+Given the following definition of the function repeat
+fun repeat(f,d,l) =
+        case l of []      => d
+                | x :: l' => f(x,repeat(f,d,l'));
+where d designates a "default"-value. 
+If we have a function: 
+    fun minus (x:int, y:int) = x-y;
+then 
+    repeat(minus, 0, [1,2,3]);
+will compute (1-(2-(3-0))) which gives the answer 2. 
+Write a repeat-like function that computes (((1-2)-3)-0) which should
+give the result -4. 
+*)
+fun repeat(f,d,l) =
+	case l of []         => d
+	|         x::[]      => f(x,d)
+	|         x::y::rest => repeat(f, d, f(x,y)::rest);
+fun minus (x:int, y:int) = x-y;
+repeat(minus, 0, [1,2,3]);
 ```

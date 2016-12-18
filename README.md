@@ -106,6 +106,7 @@ fun add(a : frac, b : frac) =
 	{numer = (#numer(a) * #denom(b) + #numer(b) * #denom(a)),
 	 denom = (#denom(a) * #denom(b))};
 add({numer=1,denom=2}, {numer=3,denom=4});
+```
 
 Example SML: Given the function `repeat(f,d,l)`, where `d` designates a default
 value. If we have a function `fun minus(x,y) = x-y;`, then the following call

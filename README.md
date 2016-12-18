@@ -12,7 +12,8 @@ language is Java. The entire progject is divided into 4 parts:
 To build the project from source, Apache Ant is required. The build process will
 generate a `.jar` file. In the terminal, simply go to the `src` directory and type:
 	
-	ant
+	ant # to build
+	ant clean # to clean
 	
 To delete all files generated from the build process:
 	

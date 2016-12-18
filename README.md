@@ -41,8 +41,8 @@ gcc -m32 -c libpas2016.c
 ar rcs libpas2016.a libpas2016.o
 ```
 	
-- Let's say that you want to compile `primes.pas` inside the `test` directory,
-then inside the `test` directory, we type the following:
+- Let's say that you want to compile `test/primes.pas`, then inside the `test` 
+directory, type the following:
 ```bash
 java -jar ../src/pascal2016.jar primes.pas       # generate Assembly code
 gcc -m32 -o primes primes.s -L ../src/ -lpas2016 # generate binary file

@@ -1,0 +1,129 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+    <!-- SGI_COMMENT COSMOCREATE -->
+    <!-- SGI_COMMENT VERSION NUMBER="1.0.2" -->
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <TITLE>Project 0</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+<P align="center">
+<b><font size="6">INF 3151/4151 : Operating Systems</font></b><BR>
+<b><font size="4">Spring 2017, University of Oslo</font></b></p><p
+align="center">
+<p>
+
+<B><FONT SIZE="5">Project 0: A Simple Real-Mode BIOS Shell&nbsp;</FONT></B>
+<P>
+This project is voluntary, but strongly recommended for candidates who need a refreshener in C, assembly and core development tools like objdump, readelf etc. It is also a good precursory task for the next (mandatory) assignment. The project is meant to be simple to develop, and does not require much knowledge about the machine architecture (x86) that we are addressing in this course. You will, however, need to understand:
+<ul>
+    <li> <a href="http://heim.ifi.uio.no/~inf3151/doc/tips_n_tricks/">Basic assembly and C.</a> 
+    <li> <a href="http://en.wikipedia.org/wiki/X86_calling_conventions#cdecl">GCC CDECL calling convention.</a>
+    <li> General purpose registers for the x86 processors, and
+    <li> <a href="http://heim.ifi.uio.no/~inf3151/tfaq0.html">Memory segmentation in real mode (for debugging).</a>
+</ul>
+</P>
+<P>
+In this task you will create a simple shell running in real mode. Real mode is the processor mode that the 386 processor starts in. It is meant as a compatibility mode for the 386 predecessor, the (16 - bit) 8086/8088. Under normal circumstances this would require use of 16 bit compilation and assembly, however, the 386 processor (that we are emulating) fortunately supports execution of 32 bit machine instructions in real mode, <a href="https://sourceware.org/binutils/docs/as/i386_002d16bit.html">and the gcc compiler can compile for it</a>. This has been setup in the project files and does not need further consideration on your part. 
+</P>
+<P>
+The shell is very basic and supports reading and writing of commands by means of a keyboard to a display output. It relies on BIOS service routines to read characters from the keyboard and writing to the display (and other things). It has only one command (although you are free to implement more if you want), "history", which prints a buffer of recent command input. Your task in this project is to implement this functionality around the framework which we provide. We will specify some tasks that <b>should</b> be implemented in C, and some that <b>should</b> be implemented in assembly.
+</P>
+</P>
+<P> You are required to implement the following functionality: </P>
+<UL>
+    <LI>
+    <b>Assembly</b> functions for reading characters from keyboard and writing them to display:
+        <ul>
+        <LI> 
+        get_char: calls BIOS interrupt routine 0x16 to get an ASCII character from keyboard and returns it.
+        </LI>
+        <LI>
+        write_char: writes a character to the display at the location of the <b>marker</b> (see set_marker function) using BIOS interrupt routine 0x10.
+        </LI>
+    </ul>
+    </LI>
+    <LI>
+    <b>C</b> fuctions implementing a ring (FIFO) buffer for logging command input.
+    <ul>
+        <LI>
+        history_put: inserts an ASCII character into the queue.
+        <LI>
+        history_write: writes the recent characters to the display. 
+    </ul>
+</UL>
+<P>
+You should use the code available from <tt>0_pre.tar</tt> as a starting point for your project. The code contains a lot of examples and you should be able to get far if you study it. We provide you with 12 files; you only need to change 2 of them (listed in <b> bold face</b>). The most important are (omitting header files):
+</P>
+<UL>
+    <LI>
+    <b>helper.s</b> functions implementing assembly calls to read from keyboard and write to display. Also contains various functions and comments that we recommend having a look at. 
+    <LI>
+    <b>history.c</b>: functions implementing the command history FIFO buffer. 
+    <LI>
+    allocator.c: allocation functions that you need for the history buffer. Implements malloc - like functionality. NB! There is only a 32 kB memory pool, so be careful. 
+    <LI>
+    shell.c: Implements the shell functions.
+    <LI>
+    common.c: Contains common types and functions useful to all files. 
+    <LI>
+    Makefile: A makefile to help you compile with the right options. 
+    <LI>
+    createimage: A tool that creates bootable images suitable for placement on a USB drive (more in P1).
+    <LI>
+    bootblock: Bootloader (more in P1).
+</UL>
+
+<P>
+If you're not already, we recommend you get familiar with the following tools:
+<ul>
+    <LI>
+    bochs: Look at the TA's tips and tips page to get familiar with running bochs in normal and debug mode.
+    <LI>
+    objdump: Use it to inspect source code. There are some problems, however, because some instructions seem not to be decoded correctly. Anyway, invoking <b>objdump -D -M i8086 shell</b> will get you started. 
+    <LI>
+    readelf: Might be useful if you want to dig more when you're done. :)
+</ul>
+<HR>
+<H2>
+    Detailed Requirements and Hints
+</H2>
+<H3>
+    BIOS Service Routines
+</H3>
+<P>
+The assembly functions are implemented using BIOS interrupts (service
+routines). Specifically, functions 0x10 and 0x16 are used. More
+information on arguments and return values can be found
+in <b>helper.s</b>, which also contains a couple of other (already
+implemented) routine calls for you to look at. This information is
+taken from the book "Undocumented PC" by Frank van Gilluwe, well worth
+a look. One of the TAs might have a copy.
+<H3>
+    Shell Ring Buffer
+</H3>
+<P>
+The C part involves the use of pointers and dynamic memory allocation. Specifically, the <b>history_put()</b> function should put an ASCII character into a linked list buffer (use <b>kzalloc()</b> to allocate space, and <b>kfree()</b> to free it later). The buffer has a maximum size (max number of ASCII characters in buffer) set on startup (<b>history_init</b>). Any characters inserted when the buffer reaches this size should trigger an eviction of the last character inserted in the queue (according to FIFO queueing). 
+<H3>
+    Debugging
+</H3>
+<P>
+You will probably need to debug your program at some time to understand what is going on. For this we recommend <a href="http://heim.ifi.uio.no/~inf3151/doc/tips_n_tricks/bochsd.html">using the bochs internal debugger</a>. The shell enters at the <b>init</b> function; its address (within the code segment) can be found by inspecting the object code like this:
+<P>
+<b>objdump -D -Mi8086 shell | less</b>
+<P>
+For example, at my workstation it is at address 0x40. However, to be able to break the program at the physical memory location we must also take into account the code segment register, which for this project is set to 0x800. Hence, the physical memory address of the first instruction in the program is:
+<P>
+<b>phy = 0x800 * 16 + 0x40</b>
+<P>
+To break at this address, insert <b>pb 0x8040</b> in the bochs internal debugger. 
+<H3>
+    GCC Calling Conventions
+</H3>
+<P>
+For the assembly functions you need to understand how the compiler arranges arguments and return values, so that you can read and return values correctly. We provided a link above for you to look at but also want to encourage a look at <b>shell.h</b> as well as the already implemented assembly functions in <b>helper.s</b>. Note the __attribute__((cdecl)) around the function declarations so that we are absolutely certain how the compiler arranges arguments and return values for the assembly-implemented functions. 
+    
+<HR>
+</BODY>
+</HTML>

@@ -93,11 +93,11 @@ def parse_doc(path, question_bank=None):
         print("===========================\n")
         if missing_answers:
             print("[ERROR] MISSING ANSWERS: [{}]".format(path))
-            print(missing_answers)
+            print(sorted(missing_answers))
             print()
         if len(output) < len(question_bank):
             print("[ERROR] MISSING QUESTIONS: [{}] [expected:{}] [actual:{}]".format(path, len(question_bank), len(output)))
-            print(question_bank.keys() - output.keys())
+            print(sorted(question_bank.keys() - output.keys()))
             raise MissingQuestionsException()
 
     return output

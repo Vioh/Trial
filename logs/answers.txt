@@ -1,0 +1,101 @@
+[ERROR] MISSING ANSWERS: [data/interviews/2Intervju Varbergs revisionsbyrå.docx]
+['4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/3Intervju ERA Revisorer i Norr.docx]
+['13a. För', '13b. Motivera', '9. Vilka']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/3Intervju Vadstena Bokföringsbyrå.docx]
+['13b. Motivera', '4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/4Intervju Höglandets Revisionsbyrå AB.docx]
+['4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/4Intervju Kungälvs Redovisningsbyrå AB.docx]
+['7b. Hur']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/4Intervju Pelaren Ekonomi AB.docx]
+['4. Ca', '9. Vilka']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/5Intervju Diem Ekonomibyrå AB.docx]
+['4. Ca', '9. Vilka']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/5Intervju LR Revision & Redovisning ÖrebroVingåker AB.docx]
+['10a. Vilken', '13b. Motivera', '4. Ca', '7b. Hur', '9. Vilka']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/5Intervju Norra RedovisningsHuset AB.docx]
+['23. Vad', '7b. Hur', '9. Vilka']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/5Intervju Palmér Redovisning AB.docx]
+['7b. Hur']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/6Intervju Åhnberg & Partners AB.docx]
+['18a. Hur', '4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/6Intervju Bantorget Redovisning AB.docx]
+['4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/7Intervju Edlund & Partners Ekonomi AB.docx]
+['4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Amir Suhonjic, PE Accounting.docx]
+['13b. Motivera', '15b. Motivera', '24a. Hur', '31a. Ca', '32. Ca', '33. Ungefär']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Anders Larsson, Accountor.docx]
+['13b. Motivera', '15b. Motivera', '33. Ungefär']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Björn Elfgren, Wint (Founder).docx]
+['15b. Motivera', '24b. Kort', '7b. Hur']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Copy of Loftadalens.docx]
+['28b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Copy of QCC.docx]
+['15a. I']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Daniel Arleklint, Aspia.docx]
+['13b. Motivera', '15b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/David Dybeck, Aspia.docx]
+['13b. Motivera', '15b. Motivera', '24a. Hur']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Elin Lorde, Talenom.docx]
+['15b. Motivera', '4. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Ellen Kraft, PE Accounting.docx]
+['13b. Motivera', '15b. Motivera', '24b. Kort']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervjunotat_#4_Dastan_Bratan.docx]
+['27b. Motivera', '28b. Motivera', '32. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Katarina Duvemyr,Ludwig & CO.docx]
+['31a. Ca', '32. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Max Bogren- Lindahl, PE Accounting .docx]
+['27b. Motivera', '32. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Merve, Aspia.docx]
+['15b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Ola Gunarsson, CEO Aspia.docx]
+['15b. Motivera', '32. Ca']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Olle Rydqvist, PE Accounting.docx]
+['13b. Motivera', '15b. Motivera', '22b. Motivera', '33. Ungefär', '7a. Om', '7b. Hur']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Omar Jama, Aspia.docx]
+['13b. Motivera', '24b. Kort', '27b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Redovisningsbyråer_Intervjunotat_#7.docx]
+['28b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Sean Christensen, Accountor Ekonomi & Rådgivning AB.docx]
+['24b. Kort']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Stefan Thurn, Azets .docx]
+['13b. Motivera', '15b. Motivera', '24b. Kort', '32. Ca', '7b. Hur']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Tomas Friman, Talenom.docx]
+['13b. Motivera', '24b. Kort']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Tugba, Ludvig & CO.docx]
+['15b. Motivera']

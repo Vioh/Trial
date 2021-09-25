@@ -1,0 +1,101 @@
+[ERROR] MISSING QUESTIONS: [data/interviews/2Intervju Varbergs revisionsbyrå.docx] [expected:45] [actual:42]
+['31b. Vad', '31c. Vad', '33. Ungefär']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/3Intervju ERA Revisorer i Norr.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/3Intervju Vadstena Bokföringsbyrå.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/4Intervju Höglandets Revisionsbyrå AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/4Intervju Kungälvs Redovisningsbyrå AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/4Intervju One Economy Norrköping AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/4Intervju Pelaren Ekonomi AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/4Intervju Redovisningsbyrån Öckerö AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/5Intervju Diem Ekonomibyrå AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/5Intervju LR Revision & Redovisning ÖrebroVingåker AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/5Intervju Norra RedovisningsHuset AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/5Intervju Palmér Redovisning AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/6Intervju Bantorget Redovisning AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Allians Revision & Redovisning AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Amir Suhonjic, PE Accounting.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Anders Larsson, Accountor.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Antoni K. Pagonis, Aspia .docx] [expected:45] [actual:42]
+['31b. Vad', '31c. Vad', '33. Ungefär']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Copy of Loftadalens.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Copy of Midama.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Copy of QCC.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/David Dybeck, Aspia.docx] [expected:45] [actual:44]
+['24b. Kort']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Ellen Kraft, PE Accounting.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Intervju 1 REFA Revision AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Intervju 2 Aktiv Planering AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Intervjunotat_#4_Dastan_Bratan.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Intervjunotat_#5_Dastan_bratan.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Katarina Duvemyr,Ludwig & CO.docx] [expected:45] [actual:42]
+['31b. Vad', '31c. Vad', '33. Ungefär']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Max Bogren- Lindahl, PE Accounting .docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Merve, Aspia.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Omar Jama, Aspia.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#6docx.docx] [expected:45] [actual:42]
+['31b. Vad', '31c. Vad', '6. Vilka']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#7.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/RevisorCompaniet HFM AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Sean Christensen, Accountor Ekonomi & Rådgivning AB.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']

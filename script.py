@@ -31,7 +31,9 @@ def is_answer(paragraph):
     return not bool(re.match(r'^[A-Z]\.', text)) and is_bold(paragraph)
 
 def make_key(question):
-    return " ".join(question.split()[:2])
+    key = " ".join(question.split()[:2])
+    if key == "31. Ca": return "31a. Ca"  # special handling
+    return key
 
 def parse_doc(path, question_bank=None):
     output = dict()
@@ -78,31 +80,54 @@ def parse_doc(path, question_bank=None):
         if question_bank is None:
             output[key] = question
         elif key not in question_bank:
-            raise QuestionNotFoundException("Not found [%s] in path [%s]".format(key, path))
+            raise QuestionNotFoundException("Not found [{}] in path [{}]".format(key, path))
         else:
             output[key] = answer
             print("===========================\n")
-            print("Question:", question, "\n")
-            print("Answer:", answer, "\n")
+            print("Question: ", question, "\n", sep="")
+            print("Answer: ", answer, "\n", sep="")
 
     if question_bank is not None:
         print("===========================\n")
         if len(output) < len(question_bank):
-            raise MissingQuestionsException("Missing questions in path [%s]".format(path))
+            raise MissingQuestionsException("Missing questions [{}] [expected:{}] [actual:{}]"
+                                            .format(path, len(question_bank), len(output)))
     return output
 
 ###################################################################################
 
 def compute_question_bank():
-    bank = parse_doc("data/interviews/Amir Suhonjic, PE Accounting.docx")
+    bank = parse_doc("data/interviews/Copy of Axxima.docx")
     print("====================== QUESTION BANK ========================\n")
     for key, value in bank.items():
-        print(key, "==>", value, "\n")
+        print(key, " ==> ", value, "\n", sep="")
     print("=============================================================")
+    return bank
 
 def main():
     paths = glob("data/interviews/*.docx")
-    print(paths)
+    question_bank = compute_question_bank()
+    question_not_found = []
+    missing_questions = []
 
-# main()
-# compute_question_bank()
+    for path in paths:
+        try:
+            output = parse_doc(path, question_bank)
+        except QuestionNotFoundException as e:
+            question_not_found.append(path)
+            print(e)
+        except MissingQuestionsException as e:
+            missing_questions.append(path)
+            print(e)
+
+    print("\n\n====================== MISSING QUESTIONS =========================")
+    print(len(missing_questions))
+    for path in missing_questions:
+        print(path)
+    print("====================== QUESTION NOT FOUND ========================")
+    print(len(question_not_found))
+    for path in question_not_found:
+        print(path)
+    print("==================================================================")
+
+main()

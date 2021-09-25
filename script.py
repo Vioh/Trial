@@ -13,10 +13,9 @@ class MissingQuestionsException(Exception):
 class QuestionNotFoundException(Exception):
     pass
 
-def is_bold(paragraph):
-    # Assume that if the first 2 runs are bold
-    # then the entire paragraph is bold.
-    for run in paragraph.runs[:2]:
+def is_bold(paragraph, tmp=False):
+    # Assume that if the first run is bold, then the entire paragraph is bold.
+    for run in paragraph.runs[:1]:
         if not run.bold: return False
     return True
 
@@ -37,6 +36,7 @@ def make_key(question):
 
 def parse_doc(path, question_bank=None):
     output = dict()
+    missing_answers = []
     document = Document(path)
     paragraphs = document.paragraphs
     i, j = -1, -1
@@ -48,39 +48,41 @@ def parse_doc(path, question_bank=None):
         return k, None
 
     def find_answer(k):
-        start, end = None, None
-
+        start = None
         while k < len(paragraphs):
+            if is_question(paragraphs[k]): return k-1, None
             if is_answer(paragraphs[k]): start = k; break
             k += 1
 
-        while k < len(paragraphs):
-            if not is_answer(paragraphs[k]): end = k; break
-            k += 1
+        end = k
+        while end < len(paragraphs):
+            if not is_answer(paragraphs[end]): break
+            end += 1
 
-        if start is not None and end is not None:
+        if start is not None:
             answer = "\n".join([p.text for p in paragraphs[start:end]])
             return end-1, answer.strip()
-        elif start is not None:
-            return start, paragraphs[start].text.strip()
         else:
-            return k, None
+            return end, None
 
     if question_bank is not None:
-        print("\n" * 5, "PARSING: " + path, "\n", sep="")
+        print("\n" * 10, "PARSING: " + path, "\n", sep="")
 
     while True:
         i, question = find_question(j+1)
-        if question is None: break
+        if not question: break
+        key = make_key(question)
 
         j, answer = find_answer(i+1)
-        if answer is None: break
+        if not answer:
+            missing_answers.append(key)
+            answer = ""
 
-        key = make_key(question)
         if question_bank is None:
             output[key] = question
         elif key not in question_bank:
-            raise QuestionNotFoundException("Not found [{}] in path [{}]".format(key, path))
+            print("[ERROR] NOT FOUND: [{}] [{}]".format(key, path))
+            raise QuestionNotFoundException()
         else:
             output[key] = answer
             print("===========================\n")
@@ -89,9 +91,15 @@ def parse_doc(path, question_bank=None):
 
     if question_bank is not None:
         print("===========================\n")
+        if missing_answers:
+            print("[ERROR] MISSING ANSWERS: [{}]".format(path))
+            print(missing_answers)
+            print()
         if len(output) < len(question_bank):
-            raise MissingQuestionsException("Missing questions [{}] [expected:{}] [actual:{}]"
-                                            .format(path, len(question_bank), len(output)))
+            print("[ERROR] MISSING QUESTIONS: [{}] [expected:{}] [actual:{}]".format(path, len(question_bank), len(output)))
+            print(question_bank.keys() - output.keys())
+            raise MissingQuestionsException()
+
     return output
 
 ###################################################################################
@@ -105,7 +113,7 @@ def compute_question_bank():
     return bank
 
 def main():
-    paths = glob("data/interviews/*.docx")
+    paths = sorted(glob("data/interviews/*.docx"))
     question_bank = compute_question_bank()
     question_not_found = []
     missing_questions = []
@@ -115,10 +123,8 @@ def main():
             output = parse_doc(path, question_bank)
         except QuestionNotFoundException as e:
             question_not_found.append(path)
-            print(e)
         except MissingQuestionsException as e:
             missing_questions.append(path)
-            print(e)
 
     print("\n\n====================== MISSING QUESTIONS =========================")
     print(len(missing_questions))

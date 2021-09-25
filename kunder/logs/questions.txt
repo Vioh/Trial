@@ -1,0 +1,17 @@
+[ERROR] MISSING QUESTIONS: [data/interviews/Intervju Croisette.docx] [expected:30] [actual:28]
+['22. Om', '3b. Har']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Kundföretag_intervjunotat_Dastan.docx] [expected:30] [actual:28]
+['22. Om', '3b. Har']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Maria Flyding, Attentec.docx] [expected:30] [actual:28]
+['22. Om', '3b. Har']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/NovatorSolutions_Formulär.docx] [expected:30] [actual:28]
+['22. Om', '3b. Har']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/SaltXTechnology_Formulär.docx] [expected:30] [actual:28]
+['22. Om', '3b. Har']
+--
+[ERROR] MISSING QUESTIONS: [data/interviews/Ulrica Thesander, Caspeco.docx] [expected:30] [actual:28]
+['22. Om', '3b. Har']

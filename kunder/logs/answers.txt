@@ -1,0 +1,89 @@
+[ERROR] MISSING ANSWERS: [data/interviews/1Intervju CG Solutions.docx]
+['12b. Om', '12c. Om', '13. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/1Intervju El-team Johansson och Bjurström.docx]
+['19. Ca', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/1Intervju Nordec El.docx]
+['12b. Om', '12c. Om', '13. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/1Intervju Renbil i Malmö.docx]
+['15a. Om', '15b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/1Intervju Sävedalens Värme & Kylservice.docx]
+['12b. Om', '12c. Om', '13. Om', '15a. Om', '15b. Motivera', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Caroline Christensen_Trafiksystem Väst AB.docx]
+['5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Copy of Brainforest.docx]
+['3b. Har']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Copy of GU Ventures.docx]
+['5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Copy of ISP.docx]
+['14b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju Baltic Gateway.docx]
+['12b. Om', '12c. Om', '13. Om', '18. Vad', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju Croisette.docx]
+['15a. Om', '15b. Motivera', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju Göteborgs Kollektivtrafik AB.docx]
+['12b. Om', '12c. Om', '13. Om', '15a. Om', '15b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju MindQore.docx]
+['12b. Om', '12c. Om', '13. Om', '15a. Om', '15b. Motivera', '20a. Många', '21. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju P&B Brandkonsult .docx]
+['12b. Om', '12c. Om', '13. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju Teledyne Signal Processing Devices Sweden.docx]
+['12b. Om', '12c. Om', '13. Om', '15a. Om', '15b. Motivera', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Intervju Wilzens måleri AB.docx]
+['12b. Om', '12c. Om', '13. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Kundföretag_Intervju_3_Dastan.docx]
+['15a. Om', '15b. Motivera']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Kundföretag_Intervjunotat_#10_Dastan.docx]
+['12b. Om', '12c. Om', '13. Om', '15a. Om', '15b. Motivera', '18. Vad', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Kundföretag_Intervjunotat_#9.docx]
+['15a. Om', '15b. Motivera', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Kundföretag_Intervjunotat_2_Dastan.docx]
+['12b. Om', '12c. Om', '13. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Kundföretag_intervjunotat_#8.docx]
+['12c. Om', '13. Om', '15a. Om', '15b. Motivera', '18. Vad']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Kundföretag_intervjunotat_Dastan.docx]
+['15a. Om', '15b. Motivera', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Maria Flyding, Attentec.docx]
+['15a. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/NovatorSolutions_Formulär.docx]
+['12b. Om', '12c. Om', '13. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/SaltXTechnology_Formulär.docx]
+['12b. Om', '12c. Om', '13. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Sophiahemmet Rehab Center.docx]
+['12b. Om', '12c. Om', '13. Om', '15a. Om', '15b. Motivera', '18. Vad', '22. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/St Eriks Hiss Aktiebolag.docx]
+['12b. Om', '12c. Om', '13. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/TKLogistik_Formulär_v3.2.docx]
+['16. Vilka', '21. Om', '5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Trident BMC AB.docx]
+['5b. Om']
+--
+[ERROR] MISSING ANSWERS: [data/interviews/Ulrica Thesander, Caspeco.docx]
+['12b. Om', '12c. Om']

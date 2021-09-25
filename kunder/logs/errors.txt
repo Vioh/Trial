@@ -1,0 +1,5 @@
+====================== ERRORS =========================
+2
+data/interviews/Accante intervju Kvadrat.docx
+data/interviews/Intervju Celeste Digital.docx
+==================================================================

@@ -4,7 +4,6 @@ import pandas as pd  # pip3 install pandas
 from docx import *  # pip3 install python-docx
 from glob import glob
 
-# TODO: Manual addition of Copy of Axxima.docx (question 31C)
 # TODO: Parse headers from files
 
 ###################################################################################
@@ -27,7 +26,7 @@ def is_answer(paragraph):
 
 def make_key(question):
     key = " ".join(question.split()[:2])
-    if key == "31. Ca": return "31a. Ca"  # special handling
+    if key == "3. Vad": return "3a. Vad"  # special handling
     return key
 
 def parse_doc(path, question_bank=None):
@@ -102,7 +101,7 @@ def parse_doc(path, question_bank=None):
 ###################################################################################
 
 def compute_question_bank():
-    bank = parse_doc("data/interviews/Copy of Axxima.docx")
+    bank = parse_doc("data/interviews/1Intervju CG Solutions.docx")
     print("====================== QUESTION BANK ========================\n")
     for key, value in bank.items():
         print(key, " ==> ", value, "\n", sep="")

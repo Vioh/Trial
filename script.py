@@ -7,6 +7,12 @@ from glob import glob
 def get_header():
     print("TODO")
 
+class MissingQuestionsException(Exception):
+    pass
+
+class QuestionNotFoundException(Exception):
+    pass
+
 def is_bold(paragraph):
     # Assume that if the first 2 runs are bold
     # then the entire paragraph is bold.
@@ -24,7 +30,11 @@ def is_answer(paragraph):
         return True  # ignore empty string for answer only (not for question)
     return not bool(re.match(r'^[A-Z]\.', text)) and is_bold(paragraph)
 
+def make_key(question):
+    return " ".join(question.split()[:2])
+
 def parse_doc(path, question_bank=None):
+    output = dict()
     document = Document(path)
     paragraphs = document.paragraphs
     i, j = -1, -1
@@ -54,6 +64,9 @@ def parse_doc(path, question_bank=None):
         else:
             return k, None
 
+    if question_bank is not None:
+        print("\n" * 5, "PARSING: " + path, "\n", sep="")
+
     while True:
         i, question = find_question(j+1)
         if question is None: break
@@ -61,14 +74,31 @@ def parse_doc(path, question_bank=None):
         j, answer = find_answer(i+1)
         if answer is None: break
 
+        key = make_key(question)
+        if question_bank is None:
+            output[key] = question
+        elif key not in question_bank:
+            raise QuestionNotFoundException("Not found [%s] in path [%s]".format(key, path))
+        else:
+            output[key] = answer
+            print("===========================\n")
+            print("Question:", question, "\n")
+            print("Answer:", answer, "\n")
+
+    if question_bank is not None:
         print("===========================\n")
-        print("Question:", question, "\n")
-        print("Answer:", answer, "\n")
+        if len(output) < len(question_bank):
+            raise MissingQuestionsException("Missing questions in path [%s]".format(path))
+    return output
 
 ###################################################################################
 
 def compute_question_bank():
-    parse_doc("data/interviews/Amir Suhonjic, PE Accounting.docx")
+    bank = parse_doc("data/interviews/Amir Suhonjic, PE Accounting.docx")
+    print("====================== QUESTION BANK ========================\n")
+    for key, value in bank.items():
+        print(key, "==>", value, "\n")
+    print("=============================================================")
 
 def main():
     paths = glob("data/interviews/*.docx")

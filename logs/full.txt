@@ -13242,43 +13242,7 @@ Answer: 1:  Bokföring 2: Deklarationer 3: Årsredovisning 4: Lönehantering
 
 
 
-====================== MISSING QUESTIONS =========================
-34
-data/interviews/2Intervju Varbergs revisionsbyrå.docx
-data/interviews/3Intervju ERA Revisorer i Norr.docx
-data/interviews/3Intervju Vadstena Bokföringsbyrå.docx
-data/interviews/4Intervju Höglandets Revisionsbyrå AB.docx
-data/interviews/4Intervju Kungälvs Redovisningsbyrå AB.docx
-data/interviews/4Intervju One Economy Norrköping AB.docx
-data/interviews/4Intervju Pelaren Ekonomi AB.docx
-data/interviews/4Intervju Redovisningsbyrån Öckerö AB.docx
-data/interviews/5Intervju Diem Ekonomibyrå AB.docx
-data/interviews/5Intervju LR Revision & Redovisning ÖrebroVingåker AB.docx
-data/interviews/5Intervju Norra RedovisningsHuset AB.docx
-data/interviews/5Intervju Palmér Redovisning AB.docx
-data/interviews/6Intervju Bantorget Redovisning AB.docx
-data/interviews/Allians Revision & Redovisning AB.docx
-data/interviews/Amir Suhonjic, PE Accounting.docx
-data/interviews/Anders Larsson, Accountor.docx
-data/interviews/Antoni K. Pagonis, Aspia .docx
-data/interviews/Copy of Loftadalens.docx
-data/interviews/Copy of Midama.docx
-data/interviews/Copy of QCC.docx
-data/interviews/David Dybeck, Aspia.docx
-data/interviews/Ellen Kraft, PE Accounting.docx
-data/interviews/Intervju 1 REFA Revision AB.docx
-data/interviews/Intervju 2 Aktiv Planering AB.docx
-data/interviews/Intervjunotat_#4_Dastan_Bratan.docx
-data/interviews/Intervjunotat_#5_Dastan_bratan.docx
-data/interviews/Katarina Duvemyr,Ludwig & CO.docx
-data/interviews/Max Bogren- Lindahl, PE Accounting .docx
-data/interviews/Merve, Aspia.docx
-data/interviews/Omar Jama, Aspia.docx
-data/interviews/Redovisningsbyråer_Intervjunotat_#6docx.docx
-data/interviews/Redovisningsbyråer_Intervjunotat_#7.docx
-data/interviews/RevisorCompaniet HFM AB.docx
-data/interviews/Sean Christensen, Accountor Ekonomi & Rådgivning AB.docx
-====================== QUESTION NOT FOUND ========================
+====================== ERRORS =========================
 1
 data/interviews/Kundföretag_Intervjunotat_#10_Dastan.docx
 ==================================================================

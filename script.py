@@ -7,12 +7,6 @@ from glob import glob
 def get_header():
     print("TODO")
 
-class MissingQuestionsException(Exception):
-    pass
-
-class QuestionNotFoundException(Exception):
-    pass
-
 def is_bold(paragraph, tmp=False):
     # Assume that if the first run is bold, then the entire paragraph is bold.
     for run in paragraph.runs[:1]:
@@ -82,7 +76,7 @@ def parse_doc(path, question_bank=None):
             output[key] = question
         elif key not in question_bank:
             print("[ERROR] NOT FOUND: [{}] [{}]".format(key, path))
-            raise QuestionNotFoundException()
+            raise Exception("Question not in question bank!")
         else:
             output[key] = answer
             print("===========================\n")
@@ -96,9 +90,10 @@ def parse_doc(path, question_bank=None):
             print(sorted(missing_answers))
             print()
         if len(output) < len(question_bank):
+            missing_questions = question_bank.keys() - output.keys()
             print("[ERROR] MISSING QUESTIONS: [{}] [expected:{}] [actual:{}]".format(path, len(question_bank), len(output)))
-            print(sorted(question_bank.keys() - output.keys()))
-            raise MissingQuestionsException()
+            print(sorted(missing_questions))
+            for q in missing_questions: output[q] = ""
 
     return output
 
@@ -115,24 +110,17 @@ def compute_question_bank():
 def main():
     paths = sorted(glob("data/interviews/*.docx"))
     question_bank = compute_question_bank()
-    question_not_found = []
-    missing_questions = []
+    errors = []
 
     for path in paths:
         try:
             output = parse_doc(path, question_bank)
-        except QuestionNotFoundException as e:
-            question_not_found.append(path)
-        except MissingQuestionsException as e:
-            missing_questions.append(path)
+        except Exception as e:
+            errors.append(path)
 
-    print("\n\n====================== MISSING QUESTIONS =========================")
-    print(len(missing_questions))
-    for path in missing_questions:
-        print(path)
-    print("====================== QUESTION NOT FOUND ========================")
-    print(len(question_not_found))
-    for path in question_not_found:
+    print("\n\n====================== ERRORS =========================")
+    print(len(errors))
+    for path in errors:
         print(path)
     print("==================================================================")
 

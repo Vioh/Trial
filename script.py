@@ -1,11 +1,13 @@
+import os
 import re
+import pandas as pd
 from docx import *
 from glob import glob
 
-###################################################################################
+# TODO: Manual addition of Copy of Axxima.docx (question 31C)
+# TODO: Parse headers from files
 
-def get_header():
-    print("TODO")
+###################################################################################
 
 def is_bold(paragraph, tmp=False):
     # Assume that if the first run is bold, then the entire paragraph is bold.
@@ -112,9 +114,14 @@ def main():
     question_bank = compute_question_bank()
     errors = []
 
+    table = pd.DataFrame()
+    table["Questions"] = pd.Series(question_bank)
+
     for path in paths:
         try:
             output = parse_doc(path, question_bank)
+            filename = os.path.basename(path)
+            table[filename] = pd.Series(output)
         except Exception as e:
             errors.append(path)
 
@@ -123,5 +130,6 @@ def main():
     for path in errors:
         print(path)
     print("==================================================================")
+    table.to_csv("output.csv", sep ='§')
 
 main()

@@ -11320,6 +11320,12 @@ Answer: Antalet företag som startas är en bidragande faktor. Man får ständig
 
 ===========================
 
+Question: 6. Vilka specifika tjänster har högst tillväxt dvs där efterfrågan ökar mest (på marknaden för redovisningstjänster/ ekonomiadministrativa och närliggande tjänster)?
+
+Answer: Rådgivningen. Vi inne i den digitala transformationen just nu vilket betyder att de automatiserade tjänsterna kommer försvinna. Man vill inte betala 600-700 kr per timme för de tjänsterna, då man enkelt kan sköta det själv. Utan då betalar man hellre för mer rådgivning och process stöd. För vår del tror jag att fokus kommer att öka kring företag med Internetförsäljning. Den typen av företag har svårare att sköta sin redovisning själv i och med att det blir så många transaktioner.
+
+===========================
+
 Question: 7a. Om man förenklat delar upp hela marknaden i dels mer kvalificerade rådgivningstjänster och dels mer standardiserade / enkla redovisningstjänster - hur snabbt växer de mer kvalificerade rådgivningstjänster (ex. kring skatt, juridik, revision mm) årligen i % ca?
 
 Answer: Skulle säga det ligger på 50/50 idag . En ökning på 10% per år men det förflyttas till att de mer kvalificerade tjänsterna ökar i förhållande till de mer standardiserade.
@@ -11542,8 +11548,8 @@ Answer: Bulken, dvs löpande, löner, bokslut är nog 50%. Övrig rådgivning be
 
 ===========================
 
-[ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#6docx.docx] [expected:45] [actual:42]
-['31b. Vad', '31c. Vad', '6. Vilka']
+[ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#6docx.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
 
 
 

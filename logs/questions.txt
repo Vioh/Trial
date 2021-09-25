@@ -88,8 +88,8 @@
 [ERROR] MISSING QUESTIONS: [data/interviews/Omar Jama, Aspia.docx] [expected:45] [actual:43]
 ['31b. Vad', '31c. Vad']
 --
-[ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#6docx.docx] [expected:45] [actual:42]
-['31b. Vad', '31c. Vad', '6. Vilka']
+[ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#6docx.docx] [expected:45] [actual:43]
+['31b. Vad', '31c. Vad']
 --
 [ERROR] MISSING QUESTIONS: [data/interviews/Redovisningsbyråer_Intervjunotat_#7.docx] [expected:45] [actual:43]
 ['31b. Vad', '31c. Vad']

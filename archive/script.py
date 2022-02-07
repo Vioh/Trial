@@ -101,7 +101,7 @@ def parse_doc(path, question_bank=None):
 ###################################################################################
 
 def compute_question_bank():
-    bank = parse_doc("data/Template 2_English.docx")
+    bank = parse_doc("data/Template 1_Swedish.docx")
     print("====================== QUESTION BANK ========================\n")
     for key, value in bank.items():
         print(key, " ==> ", value, "\n", sep="")
@@ -109,7 +109,7 @@ def compute_question_bank():
     return bank
 
 def main():
-    paths = sorted(glob("data/interviews/*.docx"))
+    paths = sorted(glob("data/swedish/*.docx"))
     question_bank = compute_question_bank()
     errors = []
 
